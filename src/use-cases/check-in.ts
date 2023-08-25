@@ -36,10 +36,10 @@ export class CheckInUseCase {
     }
 
     const distance = getDistanceBetweenCoordinates(
-      { latitude: userLatitude, longitude: userLongitude },
+      { latitude: userLatitude, longitute: userLongitude },
       {
         latitude: gym.latitude.toNumber(),
-        longitude: gym.longitute.toNumber(),
+        longitute: gym.longitute.toNumber(),
       },
     )
 
