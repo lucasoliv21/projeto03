@@ -1,5 +1,5 @@
-import { expect, describe, it, beforeEach } from 'vitest'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
+import { expect, describe, it, beforeEach } from 'vitest'
 import { FetchNearbyGymsUseCase } from './fetch-nearby-gyms'
 
 let gymsRepository: InMemoryGymsRepository
@@ -16,21 +16,21 @@ describe('Fetch Nearby Gyms Use Case', () => {
       title: 'Near Gym',
       description: null,
       phone: null,
-      latitude: -6.3765638,
-      longitute: -37.3525404,
+      latitude: -27.2092052,
+      longitute: -49.6401091,
     })
 
     await gymsRepository.create({
       title: 'Far Gym',
       description: null,
       phone: null,
-      latitude: -6.4494884,
-      longitute: -36.8760799,
+      latitude: -27.0610928,
+      longitute: -49.5229501,
     })
 
     const { gyms } = await sut.execute({
-      userLatitude: -6.3762679,
-      userLongitude: -37.37951,
+      userLatitude: -27.2092052,
+      userLongitude: -49.6401091,
     })
 
     expect(gyms).toHaveLength(1)

@@ -29,7 +29,7 @@ describe('Check-in Use Case', () => {
   })
 
   afterEach(() => {
-    vi.useFakeTimers()
+    vi.useRealTimers()
   })
 
   it('should be able to check in', async () => {
